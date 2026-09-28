@@ -30,10 +30,4 @@ else in the rubric applies as written.
 
 ## Your fit profile
 
-<!-- YOU write this part: a few sentences about you. What languages and
-tools you have actually used, what you want to get better at, anything
-you want to avoid. The skill uses this only to RANK the issues your
-rubric accepts, never to change a verdict: fit cannot rescue an issue
-your rubric rejects, and cannot sink one it accepts. -->
-
-I have experience with Python and JavaScript, and I'm comfortable with standard GitHub workflows. I want to improve my skills in contributing to open-source projects and working with established codebases. I prefer issues that involve clear, bounded work rather than refactoring large systems.
+I have experience with Python and JavaScript, and I'm comfortable with standard GitHub workflows. I want to improve my skills in contributing to open-source projects and working with established codebases. I prefer issues that involve clear, bounded work rather than refactoring large systems. For this course section, I'm selecting from the classroom Path Review project (codepath/pathreview-ai301-fa26-s3) as the exclusive scope per the assignment requirements.
