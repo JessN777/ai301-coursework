@@ -1,0 +1,10 @@
+grading 2 bundle(s) with rubric.md, model sonnet, 5 worker(s)...
+  issue-02: ERROR (claude exited 1: )
+  issue-01: ERROR (claude exited 1: )
+2 item(s) errored; fix and re-run.
+
+item      gold    verdict  agree  note
+issue-01  accept  ERROR           claude exited 1: 
+issue-02  reject  ERROR           claude exited 1: 
+
+agreement: 0/0 scored items
