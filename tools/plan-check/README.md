@@ -1,1 +1,1 @@
-Unit 3 uploads your installed `plan-check` folder here (the current files from `~/.claude/skills/plan-check/`).
+﻿Unit 3 plan-check skill. Canonical copy: ~/.claude/skills/plan-check/
