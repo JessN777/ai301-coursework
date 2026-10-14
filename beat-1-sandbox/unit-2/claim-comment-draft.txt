@@ -1,0 +1,7 @@
+I'd like to investigate #73: README.md and docs/SETUP.md tell you to set OPENROUTER_API_KEY, but .env.example only documents `mock` / `openai` and OPENAI_API_KEY even though core/config.py defines OpenRouter fields.
+
+I'll follow the documented setup on a fresh clone (copy .env.example, then compare README.md, docs/SETUP.md, .env.example, and core/config.py) and post a report with my environment, the exact commands, and what those files actually contain. I am not promising a fix or a date — just the investigation and the write-up.
+
+Classroom note: classmates have already commented; Path Review house rules say that does not block a claim, so I am posting my own.
+
+I used an AI assistant to help organize this comment; I will run and verify every step myself.

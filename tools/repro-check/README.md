@@ -1,1 +1,1 @@
-Unit 2 uploads your installed `repro-check` folder here (the current files from `~/.claude/skills/repro-check/`).
+Unit 2 `repro-check` skill. Canonical files also live at `~/.claude/skills/repro-check/`. Point the Unit 2 starter harness `--rubric` and `--evidence` flags at that installed copy so eval and live grading use the same judgment.
