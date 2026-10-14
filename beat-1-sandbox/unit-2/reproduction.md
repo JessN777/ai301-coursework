@@ -23,7 +23,7 @@ JessN777
 
 **Claim comment**
 
-Not posted yet: `gh` is installed but not logged in (`gh auth login` required), so this text is the claim draft that will go on https://github.com/codepath/pathreview-ai301-fa26-s3/issues/73. Replace this sentence with the comment URL after posting.
+https://github.com/codepath/pathreview-ai301-fa26-s3/issues/73#issuecomment-6160446211
 
 I'd like to investigate #73: README.md and docs/SETUP.md tell you to set OPENROUTER_API_KEY, but .env.example only documents `mock` / `openai` and OPENAI_API_KEY even though core/config.py defines OpenRouter fields.
 
@@ -35,7 +35,7 @@ I used an AI assistant to help organize this comment; I will run and verify ever
 
 **Reproduction comment**
 
-Not posted yet: same GitHub login blocker as the claim. Text below is the report from the local reproduction at commit `2f4e82f`. Replace this sentence with the comment URL after posting.
+https://github.com/codepath/pathreview-ai301-fa26-s3/issues/73#issuecomment-6160466803
 
 ## Reproduction report for #73
 
