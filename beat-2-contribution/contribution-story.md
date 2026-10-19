@@ -11,7 +11,7 @@ files and no evidence uploads are part of Assignment 5.
 **Student:** Jessica Le Nguyen
 **GitHub Username:** JessN777
 **Issue:** https://github.com/andre-motta/tongs/issues/318
-**Pull Request:** [GitHub PR link, once opened]
+**Pull Request:** https://github.com/andre-motta/tongs/pull/464
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
@@ -62,10 +62,9 @@ I installed issue-scout, kept the unit 1 rubric and evidence guide, and wrote a 
 
 I installed the voice-guard, extended the voice guide with claim, question, and ping rules, and swapped repro-check and plan-check onto the wild scopes. The first two manual checks stopped because `claude.exe` was not on PATH; after I added its directory, the claim draft passed, and a body-less `gh issue comment --help` was stopped on purpose. I posted the claim and a file-comparison note on tongs #318. `CLAUDE.local.md` is under 60 lines, distilled from CONTRIBUTING.md and the keybinding files, and `git status` in the clone does not show it because `.git/info/exclude` hides it. I also replaced the rubric's "Issue is bounded" gate with "scope-feasible", because #318 is one docs task spread across several named files.
 
-**Unit 7: [one line on the tool work]**
+**Unit 7: The ship-gate passed the README branch after two stops**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced
-on your real branch, what fought you, what changed because of it.]
+I installed the ship-gate on the tongs clone and wrote ship-manifest.md with the control-character check and the markdown lint from the docs CI job. The first real run stopped because Windows cmd.exe could not execute the extensionless Unix lint path. I changed that row to markdownlint-cli2.cmd. The next run stopped because test_evidence.md, a local file the lint glob still sees, had a bare URL and unlabeled fences. I fixed those lines. The third run passed: both repo checks ok, and pr-precheck accepted plan-fidelity, test-evidence, diff-reviewable, and standards-comms. I opened https://github.com/andre-motta/tongs/pull/464 from the fork after that pass. pytest, ruff, the site build, and desktop lint stay excluded, with the reason and date in the manifest.
 
 **Unit 8: [one line on the tool work]**
 
@@ -148,45 +147,40 @@ Windows 11, a shallow clone of andre-motta/tongs at the default branch. I did no
 
 **Analysis**
 
-[Your analysis of the root cause: what is causing the issue, traced
-to the files and functions involved.]
+Part 2 is a documentation mismatch, not a behavior bug. The README Keybindings section was written as if `o` were global, as if the desktop app had no keys of its own, and as if the diff viewer and Pipeline Escape handling matched an older table. docs/reference/keybindings.md is the page the issue treats as the source of truth. The line numbers it cites in src/tongs/widgets/diff_panel.py are a banner string in this clone, so I did not edit that file.
 
 **Proposed Solution**
 
-[High-level description of your fix approach, and what you are
-deliberately NOT changing.]
+Edit README.md only, for the four named disagreements. Do not change part 3 (the check lists), and do not change Python or desktop code.
 
 **Implementation Plan**
 
-1. [Modify file X to do Y]
-2. [Add or change Z]
-3. [Update tests]
+1. Point the desktop sentence at the reference's desktop section.
+2. Move `o` from the Global table to the Inbox table, and note under MR detail that it opens the current MR and is not bound on the repository list.
+3. Add `e` and `F` to the Diff viewer table, worded like the reference.
+4. Replace the two Pipeline Escape rows with one row matching the reference.
 
-[Record deviations here as they happen: what changed mid-build and
-why. A recorded deviation is honest work; silent drift is not.]
+Deviation, recorded before the pull request: the reference intro says the main-screen keys also apply on the repository list, but the `o` cell and the issue both say `o` is inbox and MR detail. The README follows the issue and the cell.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: the plan file the ship-gate's pr-precheck read (plan.md in the clone, not committed)
+- What it produced: a pass on plan-fidelity for README.md only
+- Difficulties: the issue's diff_panel.py line numbers do not match this clone
+- What changed: the plan says the README follows the reference text, not those line numbers
 
 ---
 
 ## Testing Strategy
 
-[What observable checks prove the fix: your reproduction steps re-run
-against the built change (before and after), and the repo's own test
-suite or checks with the outcome shown. "Tests pass" with nothing
-observable named is not a strategy.]
+The observable is the four README disagreements, checked against docs/reference/keybindings.md before the edit (the issue comment) and after it (the diff). The repo checks I actually ran are `python scripts/check_control_chars.py` (738 text files, no disallowed characters) and the markdownlint command from issue #318 (0 issues). pytest, ruff, and the site build were not run. The manifest records that exclusion, and the pull request says the same thing.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: ship-gate, running the manifest commands and then pr-precheck on test_evidence.md
+- What it produced: a pass on test-evidence after the local evidence file itself was lint-clean
+- Difficulties: the first lint failure was test_evidence.md, not README.md
+- What changed: labeled the fences and removed the bare URL in that local file
 
 ---
 
@@ -197,44 +191,39 @@ built, decisions you made when you made them, wrong turns included.]
 
 **2026-10-18**
 
-Claimed tongs #318 part 2 only, after the voice-guard passed the draft. Compared README.md with docs/reference/keybindings.md on a shallow clone and posted that comparison. Did not start the app. Did not take part 3.
+Claimed tongs #318 part 2 only, after the voice-guard passed the draft. Compared README.md with docs/reference/keybindings.md on a shallow clone and posted that comparison. Did not start the app.
 
-**[Date]**
+**2026-10-18**
 
-[Entry]
+Built the README edit on fix/318-readme-keybindings (commit 9ef99be). The ship-gate blocked twice, once on the Windows lint path and once on test_evidence.md, then passed. Opened https://github.com/andre-motta/tongs/pull/464 from the fork. Did not take part 3.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: ship-gate
+- What it produced: two stops, then a pass, then the pull request
+- Difficulties: Windows could not run the Unix lint path, and a local notes file failed the same lint
+- What changed: the manifest command and the local evidence file, then a fresh gate run before the pull request opened
 
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when opened]
+**PR Link:** https://github.com/andre-motta/tongs/pull/464
 
-**PR Description:** [what the PR says; much of the content above
-adapts into it]
+**PR Description:** Part 2 of #318 only. The four named README disagreements now match the reference. The description says this does not close #318, explains each unchecked checklist box, and discloses that Cursor Grok 4.7 drafted the edit.
 
 **Maintainer Feedback:**
 
-- [Date]: [feedback received, or "none yet"; silence is a normal
-  state and costs you nothing]
-- [Date]: [how you addressed it]
+- 2026-10-18: none yet
 
-**Status:** [Awaiting review / Iterating / Merged / Closed. The
-status is a fact you record, never a grade: the PR is graded as
-opened.]
+**Status:** Awaiting review
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: ship-gate on fix/318-readme-keybindings, then gh pr create from the fork
+- What it produced: a pass, then pull request 464
+- Difficulties: the Unix lint path failed in Windows cmd, and a local notes file failed markdownlint
+- What changed: the manifest command uses markdownlint-cli2.cmd, and the local evidence file was lint-clean before the passing run
 
 ---
 
