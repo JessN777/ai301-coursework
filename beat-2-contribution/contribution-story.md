@@ -55,10 +55,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Built the issue scout and corrected a search that only saw brand-new issues**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I installed issue-scout, kept the unit 1 rubric and evidence guide, and wrote a fit profile plus two good-first-issue queries for Python and JavaScript. GitHub CLI was not logged in, and the first search's hundred hits were issues opened on October 18 or 19, with one repository occupying the top of the list. I bounded the queries to issues created before October 5, kept one hit per repository, and patched the maintainer-responsive check so silence on a maintainer-opened issue is not a failed reply. Graded under that patch, tongs #318, agent-sweep #207, and pydynox #490 passed, and vogt-fixture #8 and vibey #1292 failed because each already has an open pull request.
 
 **Unit 6: [one line on the tool work]**
 
