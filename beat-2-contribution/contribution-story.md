@@ -66,10 +66,9 @@ I installed the voice-guard, extended the voice guide with claim, question, and 
 
 I installed the ship-gate on the tongs clone and wrote ship-manifest.md with the control-character check and the markdown lint from the docs CI job. The first real run stopped because Windows cmd.exe could not execute the extensionless Unix lint path. I changed that row to markdownlint-cli2.cmd. The next run stopped because test_evidence.md, a local file the lint glob still sees, had a bare URL and unlabeled fences. I fixed those lines. The third run passed: both repo checks ok, and pr-precheck accepted plan-fidelity, test-evidence, diff-reviewable, and standards-comms. I opened https://github.com/andre-motta/tongs/pull/464 from the fork after that pass. pytest, ruff, the site build, and desktop lint stay excluded, with the reason and date in the manifest.
 
-**Unit 8: [one line on the tool work]**
+**Unit 8: The PR-monitor read a quiet pull request and drafted a wait note I did not send**
 
-[2-4 sentences: the PR-monitor and your playbook. What it read, what it
-drafted, what you did with the draft.]
+I wrote a playbook with a 7-day first-review threshold, one nudge maximum, and a 30-day walk-away, then ran the PR-monitor from the tongs clone on fix/318-readme-keybindings. The first full run refused because it still saw the empty template (I had started it in the same moment I saved the playbook). After the file was filled, the run at 2026-10-19T04:18:04Z read pull request 464 as QUIET: opened 2026-10-19T02:59:18Z, zero comments and reviews, mergeable, merge state UNSTABLE, no checks reported. It drafted "No nudge yet. Wait note." I did not post it. The threshold is not met until 2026-10-26T02:59Z.
 
 ---
 
@@ -197,6 +196,10 @@ Claimed tongs #318 part 2 only, after the voice-guard passed the draft. Compared
 
 Built the README edit on fix/318-readme-keybindings (commit 9ef99be). The ship-gate blocked twice, once on the Windows lint path and once on test_evidence.md, then passed. Opened https://github.com/andre-motta/tongs/pull/464 from the fork. Did not take part 3.
 
+**2026-10-18**
+
+Ran the PR-monitor against pull request 464. State was quiet, under a day, with no comments. The draft said to wait. I did not post a nudge.
+
 **Toolkit**
 
 - Tool: ship-gate
@@ -215,6 +218,7 @@ Built the README edit on fix/318-readme-keybindings (commit 9ef99be). The ship-g
 **Maintainer Feedback:**
 
 - 2026-10-18: none yet
+- 2026-10-18, monitor run 21:18 local: still none. Zero comments and reviews. I did not send a nudge.
 
 **Status:** Awaiting review
 
@@ -231,25 +235,21 @@ Built the README edit on fix/318-readme-keybindings (commit 9ef99be). The ship-g
 
 **Technical Skills Gained**
 
-[What you learned technically, named concretely.]
+I learned how tongs wants a docs change checked: `scripts/check_control_chars.py`, then markdownlint-cli2 from `.github/linters`, then a signed-off commit with a Co-authored-by line. I also learned that README key tables and `docs/reference/keybindings.md` disagree in specific cells, and that the `o` binding belongs on Inbox and MR detail, not the repo list.
 
 **Challenges Overcome**
 
-[What was hard and how you solved it; point at the real events, the
-Toolkit blocks above are full of them.]
+The scout's first search only returned issues opened that day, so I added a created-before date and one hit per repository before I trusted an accept. The voice-guard stopped until `claude.exe` was on PATH. The ship-gate stopped twice, first because Windows cmd could not run the Unix lint path, then because a local notes file failed the same lint. The PR-monitor's first full run refused an empty playbook. Each stop changed the command, the file, or the playbook before the next run.
 
 **What I'd Do Differently Next Time**
 
-[Reflection on your process.]
+I would fill the playbook and confirm the file on disk before starting the monitor, so the first full run is the real one. I would also run markdownlint on local `*.md` notes before treating a lint failure as a problem in the change.
 
 ---
 
 ## Resources Used
 
-[What actually helped, not a reading list. List things this story
-already shows you using: the doc you followed to set the environment
-up, the thread that explained the bug, the person who answered you.
-One real entry beats ten plausible ones.]
-
-- [Link to documentation that helped]
-- [Discussion, issue, or post that helped]
+- https://github.com/andre-motta/tongs/issues/318, the issue, including the named files for part 2 and the instruction not to take part 3 in the same pass
+- https://github.com/andre-motta/tongs/blob/main/docs/reference/keybindings.md, the reference the README tables were aligned to
+- https://github.com/andre-motta/tongs/blob/main/CONTRIBUTING.md, for the signed-off commit, the Co-authored-by line, and the checklist the pull request body accounts for
+- The docs CI job in the tongs repo, which named `scripts/check_control_chars.py` and the markdownlint-cli2 install the ship-manifest runs
