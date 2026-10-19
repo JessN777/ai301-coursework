@@ -1,4 +1,4 @@
-# Contribution: [Issue Title]
+# Contribution: tongs #318 part 2, README key tables vs the keybinding reference
 
 Path: `beat-2-contribution/contribution-story.md`
 
@@ -8,10 +8,9 @@ format criteria grade exactly that. Your course repo link is the whole submissio
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
-**Issue:** [GitHub issue link]
+**Student:** Jessica Le Nguyen
+**GitHub Username:** JessN777
+**Issue:** https://github.com/andre-motta/tongs/issues/318
 **Pull Request:** [GitHub PR link, once opened]
 
 One repository, built across units 5 to 8, telling the whole story of your real
@@ -59,11 +58,9 @@ one in the week it belongs to.
 
 I installed issue-scout, kept the unit 1 rubric and evidence guide, and wrote a fit profile plus two good-first-issue queries for Python and JavaScript. GitHub CLI was not logged in, and the first search's hundred hits were issues opened on October 18 or 19, with one repository occupying the top of the list. I bounded the queries to issues created before October 5, kept one hit per repository, and patched the maintainer-responsive check so silence on a maintainer-opened issue is not a failed reply. Graded under that patch, tongs #318, agent-sweep #207, and pydynox #490 passed, and vogt-fixture #8 and vibey #1292 failed because each already has an open pull request.
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: Installed the voice-guard and wrote repo memory for tongs**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or
-fell short, and what changed because of it. "Nothing broke" counts when
-it is true - say how you know.]
+I installed the voice-guard, extended the voice guide with claim, question, and ping rules, and swapped repro-check and plan-check onto the wild scopes. The first two manual checks stopped because `claude.exe` was not on PATH; after I added its directory, the claim draft passed, and a body-less `gh issue comment --help` was stopped on purpose. I posted the claim and a file-comparison note on tongs #318. `CLAUDE.local.md` is under 60 lines, distilled from CONTRIBUTING.md and the keybinding files, and `git status` in the clone does not show it because `.git/info/exclude` hides it. I also replaced the rubric's "Issue is bounded" gate with "scope-feasible", because #318 is one docs task spread across several named files.
 
 **Unit 7: [one line on the tool work]**
 
@@ -79,24 +76,16 @@ drafted, what you did with the draft.]
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs in your own words: how you searched, what your scan
-surfaced, what your scout's verdict said, why this issue fits your
-profile, and what you hope to learn. If your scout's verdict on it
-was reject and you chose it anyway, say so here and say why; choosing
-against your own tool silently is what loses points. Close with an
-honest read of the tool itself: where the scout fell short on a real
-wild search and what you changed or would change, or what convinced
-you it held up. **Record the link to your claim comment in this section too.**
-Not claimed yet? Write `claim pending` and today's date where the link goes,
-and add the link the moment your claim lands.]
+I searched open Python and JavaScript issues labeled good first issue. The first page was all issues created on October 18 or 19, so I bounded the queries to issues created before October 5 and kept one hit per repository. The scout accepted three: tongs #318, agent-sweep #207, and pydynox #490. It rejected vogt-fixture #8 and vibey #1292 because each already had an open pull request. I chose tongs #318, part 2 only. The verdict was accept, and the work is a documentation comparison, which is the kind of bounded Python-project task in my fit profile. I want to learn how a real repo wants docs and CI checks described, without taking part 3 in the same pass.
+
+The scout's first ranking was not trustworthy: fewest-comments-first promoted brand-new issues and let one repo fill the list. The old maintainer-responsive check would also have rejected tongs #318 for an empty thread even though andre-motta was merging pull requests that day. I changed the queries, the one-per-repo rule, and that check before I trusted the accept. Claim comment: https://github.com/andre-motta/tongs/issues/318#issuecomment-6258495890
 
 **Toolkit**
 
-- Tool: issue-scout (your scout: your search strategy, your rubric),
-  and how you used it
-- What it produced: [the scan and its verdict on this issue, described]
-- Difficulties: [where it fell short, or "none met" if none did]
-- What changed: [what you patched or would update, or "nothing"]
+- Tool: issue-scout, using the Python and JavaScript good-first-issue queries and the patched rubric
+- What it produced: an accept on tongs #318, with the other two accepts and the two open-PR rejects recorded in scan-output.md
+- Difficulties: the unbounded query only returned issues opened on October 18 or 19, and the old maintainer-responsive check treated a silent maintainer-opened thread as a failure
+- What changed: a created-before date, one issue per repository, and a maintainer-responsive pass condition that fails only when a contributor comment has waited more than 30 days
 
 ---
 
@@ -104,26 +93,26 @@ and add the link the moment your claim lands.]
 
 **Problem Description**
 
-[In your own words, what is broken or missing?]
+Part 2 of tongs #318: the README keybinding tables do not match docs/reference/keybindings.md. I am not taking part 3 (the CI check lists) in this pass.
 
 **Expected Behavior**
 
-[What should happen?]
+The README tables should list the same keys, with the same meaning, as the keybinding reference. The desktop sentence should point at the reference's desktop section instead of saying the desktop app only uses labelled controls.
 
 **Current Behavior**
 
-[What actually happens?]
+On a fresh clone, without starting the app: README.md line 273 still says the desktop workspace uses labelled controls, while the reference has a Desktop app (beta) key table. The README Global table still lists `o`. src/tongs/views/repo_list.py does not bind `o`. The README Diff viewer table has no `e` or `F` row; the reference has `e` and Shift+F. The README Pipeline tab has two Escape rows; the reference has one.
 
 **Affected Components**
 
-[Which parts of the codebase are involved?]
+README.md Keybindings section, docs/reference/keybindings.md, and the binding lists the issue points at in src/tongs/views/repo_list.py and src/tongs/widgets/diff_panel.py. The line numbers the issue cites in diff_panel.py are a banner string in this clone, not the bindings.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: the file comparison in the fresh clone, checked against the voice guide before I posted it
+- What it produced: the comparison comment at https://github.com/andre-motta/tongs/issues/318#issuecomment-6258522610
+- Difficulties: the issue's diff_panel.py line numbers do not match this clone
+- What changed: I reported that mismatch instead of treating those lines as the key bindings
 
 ---
 
@@ -131,31 +120,27 @@ and add the link the moment your claim lands.]
 
 **Environment Setup**
 
-[What a stranger would need to stand this up: your operating system,
-the relevant versions (language, runtime, package manager, the project
-itself), and how you set the project up. Then the challenges you faced
-and how you solved them, or that none came up.]
+Windows 11, a shallow clone of andre-motta/tongs at the default branch. I did not create a virtualenv or start the app. Part 2 is a file comparison.
 
 **Steps to Reproduce**
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Clone andre-motta/tongs.
+2. Read README.md from the Keybindings heading through the Pipeline tab.
+3. Read the matching sections in docs/reference/keybindings.md, plus BINDINGS in src/tongs/views/repo_list.py.
+4. Observed result: the four disagreements in part 2 are still in the files. The cited diff_panel.py lines are not the key bindings.
 
 **Reproduction Evidence**
 
-- **Commit showing reproduction:** [link to commit in your fork]
-- **Screenshots/logs:** [if applicable]
-- **My findings:** [what you discovered during reproduction; an
-  honest, evidenced cannot-reproduce that led you to re-pick or ask
-  the maintainer belongs here and costs you nothing]
+- **Commit showing reproduction:** not in a fork yet. The comparison is the comment on the upstream issue.
+- **Screenshots/logs:** https://github.com/andre-motta/tongs/issues/318#issuecomment-6258522610
+- **My findings:** README and the reference still disagree on the desktop sentence, global `o`, diff `e` / Shift+F, and the Pipeline Escape rows. I have not found the `e` and `F` bindings at the line numbers the issue names.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: repro-check's wild scope, plus the voice-guard on the comparison comment
+- What it produced: a posted file comparison, not an "I reproduced the running app" claim
+- Difficulties: none in the file read. The app was not part of the check.
+- What changed: nothing in the repro steps. The scope file is now the wild scope, so a stranger's claim would have blocked me.
 
 ---
 
@@ -210,9 +195,9 @@ observable named is not a strategy.]
 [A running log, added to as you work. Date each entry. What you
 built, decisions you made when you made them, wrong turns included.]
 
-**[Date]**
+**2026-10-18**
 
-[Entry]
+Claimed tongs #318 part 2 only, after the voice-guard passed the draft. Compared README.md with docs/reference/keybindings.md on a shallow clone and posted that comparison. Did not start the app. Did not take part 3.
 
 **[Date]**
 
