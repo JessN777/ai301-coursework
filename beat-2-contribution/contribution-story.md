@@ -200,6 +200,10 @@ Built the README edit on fix/318-readme-keybindings (commit 9ef99be). The ship-g
 
 Ran the PR-monitor against pull request 464. State was quiet, under a day, with no comments. The draft said to wait. I did not post a nudge.
 
+**2026-10-19**
+
+andre-motta approved and merged pull request 464 at 2026-10-20T00:37:02Z. He said the four mismatches now match the keybinding reference, and that the note about where `o` is bound was useful. He reworded the description because GitHub treats "close #318" as a closing keyword even after "does not", so #318 stays open for part 3. I did not take part 3.
+
 **Toolkit**
 
 - Tool: ship-gate
@@ -213,14 +217,15 @@ Ran the PR-monitor against pull request 464. State was quiet, under a day, with 
 
 **PR Link:** https://github.com/andre-motta/tongs/pull/464
 
-**PR Description:** Part 2 of #318 only. The four named README disagreements now match the reference. The description says this does not close #318, explains each unchecked checklist box, and discloses that Cursor Grok 4.7 drafted the edit.
+**PR Description:** Part 2 of #318 only. The four named README disagreements now match the reference. The description explains each unchecked checklist box and discloses that Cursor Grok 4.7 drafted the edit. andre-motta later reworded the sentence about #318 so GitHub would not treat it as a closing keyword.
 
 **Maintainer Feedback:**
 
 - 2026-10-18: none yet
 - 2026-10-18, monitor run 21:18 local: still none. Zero comments and reviews. I did not send a nudge.
+- 2026-10-19: andre-motta approved and merged. He confirmed the four mismatches match the reference, noted the `o` binding sentence, and kept #318 open for part 3. https://github.com/andre-motta/tongs/pull/464#pullrequestreview-5579428498
 
-**Status:** Awaiting review
+**Status:** Merged on 2026-10-19 by andre-motta. Part 3 of #318 is still open. I did not take it.
 
 **Toolkit**
 
