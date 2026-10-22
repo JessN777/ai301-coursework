@@ -208,6 +208,10 @@ andre-motta approved and merged pull request 464 at 2026-10-20T00:37:02Z. He sai
 
 Started part 3 on fix/318-check-lists (commit ed79f9e). The template, CONTRIBUTING.md, and docs/contributing.md now use the lint job's ruff paths. CONTRIBUTING.md shows the Markdown lint commands. The README install extra is `.[dev,lint,mcp]`. The ship-gate passed against upstream/main after I named the task-limit sentence in the description and patched standards-comms so a Cursor Grok 4.7 disclosure is not failed for differing from the grader. Opened https://github.com/andre-motta/tongs/pull/465. The description says Fixes #318 on purpose, because this is the last open part.
 
+**2026-10-20**
+
+andre-motta approved and merged pull request 465 at 2026-10-21T00:44:12Z. He said the template, CONTRIBUTING.md, and the contributing page now list the same checks CI runs, including the Markdown lint command and the site build's task limit. Issue 318 is closed.
+
 **Toolkit**
 
 - Tool: ship-gate
@@ -229,7 +233,7 @@ Started part 3 on fix/318-check-lists (commit ed79f9e). The template, CONTRIBUTI
 - 2026-10-18, monitor run 21:18 local: still none. Zero comments and reviews. I did not send a nudge.
 - 2026-10-19: andre-motta approved and merged. He confirmed the four mismatches match the reference, noted the `o` binding sentence, and kept #318 open for part 3. https://github.com/andre-motta/tongs/pull/464#pullrequestreview-5579428498
 
-**Status:** Merged on 2026-10-19 by andre-motta. Part 3 is a separate pull request, https://github.com/andre-motta/tongs/pull/465, opened 2026-10-20.
+**Status:** Merged on 2026-10-19 by andre-motta. Part 3, https://github.com/andre-motta/tongs/pull/465, was approved and merged by andre-motta on 2026-10-20. That merge closed #318.
 
 **Toolkit**
 
